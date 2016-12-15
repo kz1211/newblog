@@ -1,0 +1,15 @@
+ru:
+  common:
+     errors: "При заполнении формы возникли ошибки"
+     back: 'Назад'
+  posts:
+    index:
+       title: 'Посты'
+    new:
+      title: 'Новый пост'
+    edit:
+      title: 'Редактирование поста'
+    form:
+      submit:
+        '%{action} пост'
+

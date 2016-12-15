@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      posts: 'Cтатья'
+    attributes:
+      post:
+        title: 'Название'
+        content: 'Содержание'
+        all_tags: 'Тэги'
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+        too_short: 'минимум 5 символов'

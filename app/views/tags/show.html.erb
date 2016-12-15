@@ -1,11 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @tag.name %></h1>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @tag.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<% if @tag.posts.empty? %>
+  <h2>Нет постов</h2>
+<% else %>
+  <% render @tag.posts %>
+<% end %>
 

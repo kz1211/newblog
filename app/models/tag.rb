@@ -1,4 +1,5 @@
 class Tag < ApplicationRecord
-   has_many :taggable
-   has_many :post, through: :taggable
+  has_many :taggings
+  has_many :posts, through: :taggings
+
 end
