@@ -47,6 +47,7 @@ end
 #gem 'bootstrap-sass'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'russian'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

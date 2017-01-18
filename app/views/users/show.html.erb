@@ -1,0 +1,7 @@
+<h1><%= @user.name %></h1>
+
+<% if @user.posts.empty? %>
+  <h2>Нет постов</h2>
+<% else %>
+  <%= render @user.posts %>
+<% end %>

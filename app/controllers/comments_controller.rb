@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
 
-  def new
-    @comment = post.comments.new
-  end
-
   def create
     @comment = post.comments.create(comment_params)
     redirect_to post_path(@post)
@@ -24,6 +20,6 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment)
         .permit(:text)
-        .merge(user_id: current_user.id)
+        .merge(user_id: current_user.try(:id))
     end
 end

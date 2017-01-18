@@ -8,11 +8,6 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     @david = @post.user
   end
 
-  test "should get new" do
-    get new_post_comment_url(post_id: @post.id)
-    assert_response :success
-  end
-
   test "should create comment" do
     sign_in @david
 

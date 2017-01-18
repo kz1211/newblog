@@ -9,5 +9,4 @@ class Comment < ApplicationRecord
       'Anonymous'
     end
   end
-
 end

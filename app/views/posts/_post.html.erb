@@ -5,7 +5,9 @@
       <time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time>
       <%= link_to 'Delet', post_path(post), method: :delet, data: { confirm: 'Are you sure?'} %>
       <%= link_to 'Cread', edit_post_path(post) %>
+      <user><%= link_to post.user.name, user_path(post.user) %></user>
     </small>
+
   </section>
   <section class="footer-summary">
     <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary' }.join(' ') %>

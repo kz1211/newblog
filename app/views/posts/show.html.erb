@@ -26,13 +26,17 @@
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
   <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
+    <strong><%= comment.commenter %></strong>
+    <%= comment.text %>
   </p>
 <% end %>
 
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_field :text, class: 'form-control' %>
+  </div>
   <p>
     <%= f.submit %>
   </p>
