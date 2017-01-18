@@ -3,7 +3,6 @@ require 'test_helper'
 class PostsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers # штука которая помогает пробросить нужного
                                            # current_user тебе в контроллер
-
   def create_test_post!
     @post = posts(:one)
   end

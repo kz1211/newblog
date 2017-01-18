@@ -5,4 +5,5 @@
 # below each fixture, per the syntax in the comments below
 #
 david:
+  name: david
   email: 'david@gmail.com'
