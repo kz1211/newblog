@@ -1,0 +1,26 @@
+ <% if user.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= t('common.errors') %></h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for @user, url: users_path do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Изменить', class: 'btn btn-primary' %>
+    <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>
+

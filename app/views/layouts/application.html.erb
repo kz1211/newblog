@@ -14,7 +14,7 @@
         <ul class="nav navbar-nav" >
           <% if user_signed_in? %>
             <li>
-              <%= link_to "Изменить профиль", edit_user_registration_path,  class: 'btn btn-outline-primary'   %>
+              <%= link_to "Изменить профиль",    edit_users_path,  class: 'btn btn-outline-primary'   %>
             </li>
             <li>
               <%= link_to "Выйти", destroy_user_session_path, method: :delete,  class: 'btn btn-outline-primary'  %>
