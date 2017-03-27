@@ -18,10 +18,34 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     post = @user.posts
   end
-  def user_params
-    params.require(:user).permit(:name, :email )
+
+  def edit_password
+    @user = current_user
   end
+
+  def update_password
+    @user = current_user
+    if @user.update_with_password(password_params)
+      bypass_sign_in(@user)
+      redirect_to root_path
+    else
+      render "edit_password"
+    end
+  end
+
   def edit
     @user = current_user
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email )
+  end
+
+  def password_params
+    params.require(:user).permit(:password, :current_password )
+  end
+
+
 end

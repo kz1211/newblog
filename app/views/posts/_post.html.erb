@@ -2,15 +2,18 @@
   <section class="post-head">
   <h2><%= link_to post.title, post_path(post) %></h2>
     <small>
-      <time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time>
-      <%= link_to 'Delet', post_path(post), method: :delet, data: { confirm: 'Are you sure?'} %>
-      <%= link_to 'Cread', edit_post_path(post) %>
+      <time><%= post.created_at.to_date.strftime("%d %B, %Y") %>
+      </time>
+      <%= link_to @post.category.name, @post.category if post.category.present? %>
+
+      <%= link_to 'Удалить', post_path(post), method: :delet, data: { confirm: 'Вы уверены?'} %>
+      <%= link_to 'Изменить', edit_post_path(post) %>
       <user><%= link_to post.user.name, user_path(post.user) %></user>
     </small>
 
   </section>
   <section class="footer-summary">
-    <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary' }.join(' ') %>
+    <%= raw post.tags.map(&:name).map{ |t| link_to t,  tag_path(t), class: 'tag tag-primary' }.join(' ') %>
   </section>
 </article>
 

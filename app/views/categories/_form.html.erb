@@ -1,0 +1,27 @@
+ <% if @category.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= t('common.errors') %></h2>
+
+      <ul>
+        <% category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for (@category) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %>
+    <%= f.collection_select :parent_id, @categories, :id , :name, {iclude_blank:true}, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('.submit', action: @category.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
+    <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>
+

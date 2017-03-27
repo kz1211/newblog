@@ -13,3 +13,14 @@ ru:
       submit:
         '%{action} пост'
 
+  categories:
+    index:
+       title: 'Категории'
+    new:
+      title: 'Новая категория'
+    edit:
+      title: 'Редактирование категории'
+    form:
+      submit:
+        '%{action} категории'
+
